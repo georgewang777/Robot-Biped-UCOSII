@@ -41,6 +41,7 @@ void Write_Com(u8 cmd)
 void Clear_TM1624(void)
 {
    u8 i;
+	 Write_Com(0x40); 
    STB_L;
    TM1624_Write(0xc0);              
    for(i=0;i<16;i++)
@@ -55,9 +56,9 @@ void Tm1624_Init(void)
 	DIO_H;        
   Write_Com(0x89);    //最亮   10001111 设置消光脉冲14/16 显示开 	
 	//Write_Com(0x03);  //设置显示模式：7位11段        
-	Write_Com(0x40);    //设置数据命令，采用地址自动加一模式
+	//Write_Com(0x40);    //设置数据命令，采用地址自动加一模式
 	Clear_TM1624();    
-	Write_Com(0x44);    //固定地址
+//	Write_Com(0x44);    //固定地址
 	delay_ms(100);
 }
 
@@ -65,6 +66,7 @@ void Tm1624_Dispaly(void)
 {
 	u8 i,j;
 	u16 k= 200;
+	Write_Com(0x44);    //固定地址
 	for(j=0;j<8;j++)
 	{
 		STB_L;

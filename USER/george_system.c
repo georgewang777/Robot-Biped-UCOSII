@@ -1,5 +1,7 @@
 #include "george_system.h"
 extern u8 Pulse1,Pulse2,Pulse3,Pulse4;
+extern u8 led_flag; 
+//extern OS_EVENT *msg_action; 
 u8 status;
 
 void Init(void)
@@ -23,6 +25,10 @@ void Init(void)
 
 void process(void)
 {
+//	if(status!= 0)
+//	{
+//		OSMboxPost(msg_action,(void*)1); //发送消息
+//	}
 	switch(status)
 	{
 		case 1: Forward();break;    //前进
@@ -32,6 +38,9 @@ void process(void)
 		case 5: Dance();    break;  //跳舞
 		case 6: Shake();    break;  //摇摆
 		case 7: Head_Action();break;//头部
+		//case 8: led_flag = 1; break;
+		//case 9: led_flag = 0; break;
 		default: status = 0;break;
 	}
+	//OSMboxPost(msg_action,(void*)0); //发送消息
 }

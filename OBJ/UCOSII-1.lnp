@@ -18,7 +18,7 @@
 "..\obj\stm32f10x_tim.o"
 "..\obj\usart2.o"
 "..\obj\core_cm3.o"
-"..\obj\startup_stm32f10x_hd.o"
+"..\obj\startup_stm32f10x_md.o"
 "..\obj\misc.o"
 "..\obj\stm32f10x_gpio.o"
 "..\obj\stm32f10x_dbgmcu.o"

@@ -155,6 +155,14 @@ void UsartRace_Data(void)
 	{
 		status =7;
 	}
+	else if(!(strcmp_str(RxBuffer,"LedOn",5)))   // ºóÍË
+	{
+		status =8;
+	}
+	else if(!(strcmp_str(RxBuffer,"LedOff",5)))   // ºóÍË
+	{
+		status =9;
+	}
 	else
 	{
 		status = 0;
