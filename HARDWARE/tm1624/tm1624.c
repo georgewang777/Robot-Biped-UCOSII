@@ -62,7 +62,7 @@ void Tm1624_Init(void)
 	delay_ms(100);
 }
 
-void Tm1624_Dispaly(void)
+void Tm1624_Display1(void)
 {
 	u8 i,j;
 	u16 k= 200;
@@ -79,4 +79,22 @@ void Tm1624_Dispaly(void)
 		STB_H;
 		delay_ms(20);
 	}
+}
+
+void Tm1624_Display2(void)
+{
+	 u8 i;
+	 Write_Com(0x40); //µØÖ·×ÔÔö
+	
+	 STB_L;
+	 TM1624_Write(0xc0);              
+	 for(i=0;i<16;i++)
+	 TM1624_Write(0x00);                
+	 STB_H;
+	 delay_ms(100);
+	 STB_L;
+	 TM1624_Write(0xc0);              
+	 for(i=0;i<16;i++)
+	 TM1624_Write(0xff);                
+	 STB_H;
 }

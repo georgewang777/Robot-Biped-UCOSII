@@ -9,7 +9,7 @@
 *
 *
 * File    : OS_CFG.H
-* By      : Jean J. Labrosse
+* By      : George Wang
 * Version : V2.91
 *
 * LICENSING TERMS:

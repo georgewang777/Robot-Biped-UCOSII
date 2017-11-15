@@ -1,6 +1,6 @@
 #include "sys.h"
 #include "usart2.h"
-
+#include "george_system.h"
 void uart2_init(u32 bound)
 {
 	 //GPIO端口设置
@@ -125,46 +125,60 @@ int strcmp_str(char *str1,char *str2,int count)
 //串口数据解析
 void UsartRace_Data(void)
 {
-	if(!(strcmp_str(RxBuffer,"Forward",6)))  //前进
+	if(RxBuffer[0]==0x59 && RxBuffer[1]==0x48 &&RxBuffer[3]==0x5A && RxBuffer[4]==0x49)
 	{
-		status = 1;
-		//angle4 = (RxBuffer[4]-'0')*10 + (RxBuffer[5]-'0');
-		//dir4 = RxBuffer[3]-'0';
-	}
-	else if(!(strcmp_str(RxBuffer,"Backward",8))) //后退
-	{
-		status =2;
-	}
-	else if(!(strcmp_str(RxBuffer,"TurnRight",5))) // 右转
-	{
-		status =3;
-	}
-	else if(!(strcmp_str(RxBuffer,"TurnLeft",8))) // 左转
-	{
-		status =4;
-	}
-	else if(!(strcmp_str(RxBuffer,"Dance",5)))   // 左转
-	{
-		status =5;
-	}
-	else if(!(strcmp_str(RxBuffer,"Shake",5)))   // 后退
-	{
-		status =6;
-	}
-	else if(!(strcmp_str(RxBuffer,"Head",4)))   // 后退
-	{
-		status =7;
-	}
-	else if(!(strcmp_str(RxBuffer,"LedOn",5)))   // 后退
-	{
-		status =8;
-	}
-	else if(!(strcmp_str(RxBuffer,"LedOff",5)))   // 后退
-	{
-		status =9;
-	}
-	else
-	{
-		status = 0;
-	}
+		process();                    //机器人进程
+//		switch(RxBuffer[2])
+//		{
+//			case 0x01:status = 1;break;
+//			case 0x02:status = 2;break;
+//			case 0x03:status = 3;break;
+//			case 0x04:status = 4;break;
+//			case 0x05:status = 5;break;
+//			case 0x06:status = 6;break;
+//			case 0x07:status = 7;break;
+		}
+	//}
+//	if(!(strcmp_str(RxBuffer,"Forward",6)))  //前进
+//	{
+//		status = 1;
+//		//angle4 = (RxBuffer[4]-'0')*10 + (RxBuffer[5]-'0');
+//		//dir4 = RxBuffer[3]-'0';
+//	}
+//	else if(!(strcmp_str(RxBuffer,"Backward",8))) //后退
+//	{
+//		status =2;
+//	}
+//	else if(!(strcmp_str(RxBuffer,"TurnRight",5))) // 右转
+//	{
+//		status =3;
+//	}
+//	else if(!(strcmp_str(RxBuffer,"TurnLeft",8))) // 左转
+//	{
+//		status =4;
+//	}
+//	else if(!(strcmp_str(RxBuffer,"Dance",5)))   // 左转
+//	{
+//		status =5;
+//	}
+//	else if(!(strcmp_str(RxBuffer,"Shake",5)))   // 后退
+//	{
+//		status =6;
+//	}
+//	else if(!(strcmp_str(RxBuffer,"Head",4)))   // 后退
+//	{
+//		status =7;
+//	}
+////	else if(!(strcmp_str(RxBuffer,"LedOn",5)))   // 后退
+////	{
+////		status =8;
+////	}
+////	else if(!(strcmp_str(RxBuffer,"LedOff",5)))   // 后退
+////	{
+////		status =9;
+////	}
+//	else
+//	{
+//		status = 0;
+//	}
 }
