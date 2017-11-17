@@ -507,11 +507,6 @@
               <FilePath>..\SYSTEM\watchdog\watchdog.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f10x_tim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32F10x_FWLib\src\stm32f10x_tim.c</FilePath>
-            </File>
-            <File>
               <FileName>usart2.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SYSTEM\usart\usart2.c</FilePath>
@@ -545,6 +540,11 @@
               <FileName>stm32f10x_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F10x_FWLib\src\stm32f10x_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32F10x_FWLib\src\stm32f10x_tim.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_dbgmcu.c</FileName>

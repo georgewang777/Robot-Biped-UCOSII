@@ -56,12 +56,12 @@ void robot_task(void *pdata)
 			Mk_UsartAll=0;
 			RxCount=0;
 			UsartRace_Data();             //处理接收到的数据
-			OSTaskResume(LED_TASK_PRIO);	//恢复LED任务，LED恢复闪烁
+			//OSTaskResume(LED_TASK_PRIO);	//恢复LED任务，LED恢复闪烁
 			//process();                    //机器人进程
 			ClearUart2();
 			//Clear_TM1624();
 		}
-		OSTaskSuspend(LED_TASK_PRIO);   //挂起LED任务，LED停止闪烁
+		//OSTaskSuspend(LED_TASK_PRIO);   //挂起LED任务，LED停止闪烁
 		//delay_ms(10);
 	};
 }
@@ -72,7 +72,7 @@ void led_task(void *pdata)
 	while(1)
 	{
 		Tm1624_Display2();
-	}
+	};
 //	u8 led_enable;
 //	u8 err;
 //	while(1)
